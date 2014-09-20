@@ -1,0 +1,20 @@
+[
+    {
+        "url": "/",
+        "method": "GET",
+        "controller": "IndexController",
+        "action": "index"
+    },
+    {
+        "url": "/test",
+        "method": "GET",
+        "controller": "IndexController",
+        "action": "test"
+    },
+    {
+        "url": "/sanata",
+        "method": "GET",
+        "controller": "IndexController",
+        "action": "sanata"
+    }
+]

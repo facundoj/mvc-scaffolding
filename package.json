@@ -1,0 +1,10 @@
+{
+  "name": "express-mvc-test",
+  "description": "node.js mvc scafolding",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.9.3",
+    "mustache-express": "1.2.0"
+  }
+}
