@@ -13,7 +13,6 @@
     },
     {
         "url": "/sanata",
-        "method": "GET",
         "controller": "IndexController",
         "action": "sanata"
     }
