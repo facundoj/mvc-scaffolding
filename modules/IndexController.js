@@ -2,7 +2,7 @@ var IndexController = {
     index: function (req, res) {
         console.log('index action');
         // Returns view object
-        // @todo: May be it should determine view to dispatch.. 
+        // @todo: May be it should determine view to dispatch..
         return {
             title: 'Index page title'
         };
@@ -22,4 +22,4 @@ var IndexController = {
 };
 
 // @todo: I don't like this naming
-exports.actionsBound = IndexController;
+exports.actions = IndexController;

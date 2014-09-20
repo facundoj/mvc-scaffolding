@@ -39,7 +39,7 @@ function mapRoute (route) {
     console.info(method.toUpperCase() + ' ' + url + ': Handled by ' + controllerName + '.' + actionName);
     app[method](url, function(req, res) {
         // @todo: Make view dynamic
-        res.render('index', controller.actionsBound[actionName](req, res));
+        res.render('index', controller.actions[actionName](req, res));
     });
 }
 
