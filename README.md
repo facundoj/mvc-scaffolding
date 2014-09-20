@@ -13,13 +13,10 @@ Easy to configure MVC structure for web projects.
 ```json
 [
     {
-        {
-            "url": "/path",
-            "method": "GET",
-            "controller": "IndexController",
-            "action": "index"
-        },
-        ...
+        "url": "/path",
+        "method": "GET",
+        "controller": "IndexController",
+        "action": "index"
     }
 ]
 ```
