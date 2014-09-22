@@ -1,5 +1,5 @@
 /**
- * MVC web-apps scafolding. Easy mapping for views dispatching.
+ * MVC web-apps scaffolding. Easy mapping for views dispatching.
  *
  * @author facundoj
  *
