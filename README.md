@@ -1,6 +1,6 @@
 # MVC Scafolding
 
-Easy to configure MVC structure for web projects.
+Easy to configure MVC structure for Node.js web projects.
 
 ## Dependencies
 
