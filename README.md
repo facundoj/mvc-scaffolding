@@ -1,4 +1,4 @@
-# MVC Scafolding
+# MVC Scaffolding
 
 Easy to configure MVC structure for Node.js web projects.
 
