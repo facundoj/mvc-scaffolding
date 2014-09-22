@@ -1,6 +1,6 @@
 {
   "name": "express-mvc-test",
-  "description": "node.js mvc scafolding",
+  "description": "node.js mvc scaffolding",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
