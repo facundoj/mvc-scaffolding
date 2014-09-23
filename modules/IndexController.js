@@ -14,7 +14,10 @@ var IndexController = {
             title: 'Test page title'
         };
     },
-    sanata: function () {
+    fail: function () {
+        // This action fails. Should trigger a 500 message in view
+        var a;
+        a.kjhas();
         return {
             title: 'Sanata'
         };

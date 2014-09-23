@@ -22,7 +22,7 @@ function mapRoute (route) {
         method = String.prototype.toLowerCase.apply(route.method || ''),
         controllerName = route.controller || '',
         actionName = route.action || '',
-        controller;
+        controller, action, methodMapper;
 
     if (!actionName || !method || !url || !controllerName) {
         console.warn('Required information was not provided');
@@ -36,11 +36,28 @@ function mapRoute (route) {
         return;
     }
 
-    console.info(method.toUpperCase() + ' ' + url + ': Handled by ' + controllerName + '.' + actionName);
-    app[method](url, function(req, res) {
-        // @todo: Make view dynamic
-        res.render('index', controller.actions[actionName](req, res));
-    });
+    methodMapper = app[method];
+    if (typeof methodMapper === 'function') {
+        console.info(method.toUpperCase() + ' ' + url + ': Handled by ' + controllerName + '.' + actionName);
+        // Handling request
+        methodMapper.call(app, url, function(req, res) {
+            // Dispatching to configured handler
+            action = controller.actions[actionName];
+            if (typeof action === 'function') {
+                // @todo: Make view dynamic
+                try {
+                    res.render('index', action.apply(this, arguments));
+                } catch (e) {
+                    res.render('server-busy');
+                }
+            } else {
+                console.warn('Action was not found: %s', actionName);
+                res.render('not-found');
+            }
+        });
+    } else {
+        console.warn('Unkown method: ' + method);
+    }
 }
 
 // Reading routes.json config file and mapping
@@ -54,9 +71,11 @@ fs.readFile(routesIni, 'utf8', function (err, routes) {
     var i, route, url, method, controller, action;
     for (i = 0; i < routes.length; i+=1) {
         // @todo: Review. A map would be a good idea. Check express.js docs!!
-        route = routes[i];
-        mapRoute(route);
+        mapRoute(routes[i]);
     }
+    app.get('*', function (req, res) {
+        res.render('not-found');
+    });
 });
 
 // Configuring Mustache as the template engine
@@ -66,5 +85,5 @@ app.set('views', __dirname + '/views');
 
 // Starting the server
 var server = app.listen(3000, function () {
-    console.log('Server started at' + server.address().port);
+    console.log('Server started at ' + server.address().port);
 });

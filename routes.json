@@ -12,8 +12,9 @@
         "action": "test"
     },
     {
-        "url": "/sanata",
+        "url": "/fail",
+        "method": "GET",
         "controller": "IndexController",
-        "action": "sanata"
+        "action": "fail"
     }
 ]
