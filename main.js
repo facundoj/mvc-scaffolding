@@ -1,7 +1,5 @@
 /**
- * MVC web-apps scaffolding. Easy mapping for views dispatching.
- *
- * @author facundoj
+ * MVC web-apps scaffolding. Mapping for views dispatching.
  *
  * @dependency express
  * @dependency mustache-express
